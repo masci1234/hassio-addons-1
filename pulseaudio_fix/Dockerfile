@@ -6,6 +6,8 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
 ARG BUILD_ARCH=amd64
+RUN echo http://mirror1.hs-esslingen.de/pub/Mirrors/alpine/v3.13/main > /etc/apk/repositories; \
+    echo http://mirror1.hs-esslingen.de/pub/Mirrors/alpine/v3.13/community >> /etc/apk/repositories
 RUN \
     apk add --no-cache \
         alsa-plugins-pulse \
